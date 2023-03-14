@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="textbox">Enter your answer:</label>
+        <input type="text" id="textbox" name="textbox">
+        <button type="submit" onclick="redirect()">Submit</button>
+      </form>
+      
+      <script>
+      function redirect() {
+        // Get the value of the textbox
+        const answer = document.getElementById("textbox").value;
+        
+        // Redirect to a different URL based on the answer
+        switch (answer) {
+          case "link1":
+            window.location.href = "https://www.example.com/link1";
+            break;
+          case "link2":
+            window.location.href = "https://www.example.com/link2";
+            break;
+          case "link3":
+            window.location.href = "https://www.example.com/link3";
+            break;
+          default:
+            alert("Sorry, your answer is incorrect.");
+        }
+      }
+      </script>
+      
+</body>
+</html>
