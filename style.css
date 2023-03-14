@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'PSLCD3310';
+    src: url(font/PSLCD3310.ttf) format(truetype);
+}
+
+*{
+    font-family: "PSLCD3310", sans-serif;
+    margin: 10px;
+    font-size: 20;
+    padding: 0;
+    color: #47d147;
+    background-color: #080025;
+}
+
+.container{
+    width: auto;
+    margin: auto;
+    
+}
+
+header{
+    
+}
+
+::placeholder{
+    color: #096809;
+}
+
+label{
+    display: block;
+    width: auto;
+}
+
+:placeholder-shown{
+    width: auto;
+    height: 30px;
+    margin-top: 25px;
+}
+
+a:link{
+    text-decoration: none;
+}
