@@ -7,6 +7,10 @@
 
     <title>Congratulations!</title>
 
+    <style>
+      p{text-align: left;}
+    </style>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -18,25 +22,26 @@
         <h2><span class="auto-type2"></span></h2>
         <form>
             <label for="input-text"><span class="auto-type3"></label>
-            <input type="text" id="input-text" name="input-text" placeholder="ใส่โค๊ดในกระดาษตรงนี้">
-            <button type="button" onclick="submitForm()">Submit</button>
+            <input type="text" id="input-text" name="input-text" placeholder="ช่องใส่รหัสลับ">
+            <button type="button" onclick="submitForm()">▶ อ่านข้อความ ▪</button>
           </form>
       </section>
     </div>
+    <p id="clock"></p>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <script>
       var typed = new Typed(".auto-type", {
-        strings: ["จดหมายลับ ♥"],
+        strings: ["เพจเจอร์ลับ  ✉"],
         typeSpeed: 50,
       });
       var typed = new Typed(".auto-type2", {
-        strings: ["Please insert your code name!"],
+        strings: ["คุณมี 1 message ที่ยังไม่ได้เปิดอ่าน "],
         typeSpeed: 50,
       });
       var typed = new Typed(".auto-type3", {
-        strings: ["ใส่โค๊ดในกระดาษได้เลย : "],
+        strings: ["ใส่รหัสลับจากคุณ เลิศอนันต์ : "],
         typeSpeed: 50,
       });
     </script>
@@ -164,6 +169,34 @@
           }
         }
         
+        
+
+      </script>
+      <script>
+        function updateClock() {
+          // Get the current date and time
+          var now = new Date();
+          
+          // Format the time as hh:mm:ss AM/PM
+          var hours = now.getHours();
+          var minutes = now.getMinutes();
+          var seconds = now.getSeconds();
+          var ampm = hours >= 12 ? 'PM' : 'AM';
+          hours = hours % 12;
+          hours = hours ? hours : 12;
+          minutes = minutes < 10 ? '0' + minutes : minutes;
+          seconds = seconds < 10 ? '0' + seconds : seconds;
+          var time = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+          
+          // Update the clock
+          document.getElementById('clock').innerHTML = time;
+          
+          // Schedule the next update in one second
+          setTimeout(updateClock, 1000);
+        }
+        
+        // Start the clock when the page loads
+        window.onload = updateClock;
       </script>
   </body>
 </html>
